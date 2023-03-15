@@ -59,38 +59,38 @@ const Header = () => {
         </div>
       </div>
       <ul className="flex container mx-auto px-36 items-center gap-3">
-        <li className="text-gray-400 cursor-pointer hover:text-black">
+        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] " >
           Elektronika
         </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black">
+        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
           Maishiy texnika
         </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black">Kiyim</li>
-        <li className="text-gray-400 cursor-pointer hover:text-black">
+        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">Kiyim</li>
+        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
           Payabzallar
         </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black">
+        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
           Aksessuarlar
         </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black">
+        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
           Go'zallik
         </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black">
+        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
           Salomatlik
         </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black">
+        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
           Uy-ro'zg'or buyumlari
         </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black">
+        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
           Qurilish va ta'mirlash
         </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black">
+        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
           Avtotovarlar
         </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black">
+        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
           Bolalar tovarlari
         </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black">Yana^</li>
+        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">Yana^</li>
       </ul>
     </>
   );
