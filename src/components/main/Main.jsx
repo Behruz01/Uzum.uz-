@@ -1,11 +1,15 @@
 import React from "react";
-import Header from "../header/Header";
+import Card from "../cards/Card";
 import Layout from "../layout/Layout";
+import Slider from "../pages/slider";
 
 const Main = () => {
   return (
     <>
-      <Layout />
+      <Layout>
+        <Slider />
+        <Card />
+      </Layout>
     </>
   );
 };

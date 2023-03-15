@@ -6,6 +6,7 @@ import user_icon from "../../assets/user_icon.png";
 import heart_icon from "../../assets/heart_icon.svg";
 import bag_icon from "../../assets/bag_icon.svg";
 import catalog_icon from "../../assets/catalog_icon.png";
+import lupa_icon from "../../assets/lupa_icon.png";
 
 const Header = () => {
   return (
@@ -37,11 +38,16 @@ const Header = () => {
             <img className="mr-2" src={catalog_icon} alt="" />
             Katalog
           </span>
-          <input
-            className="w-96 border rounded-md ml-2 p-2"
-            type="text"
-            placeholder="Mahsulotlar va turkumlar izlash"
-          />
+          <div className="flex">
+            <input
+              className="w-96 border rounded-l-lg ml-2 p-2 "
+              type="text"
+              placeholder="Mahsulotlar va turkumlar izlash"
+            />
+            <span className="p-3 border rounded-r-lg  ">
+              <img className="w-5 h-5 " src={lupa_icon} alt="" />
+            </span>
+          </div>
         </div>
         <div className="btns flex">
           <span className="ml-2 flex items-center hover:bg-gray-200 rounded-md p-2 text-black ">
@@ -59,13 +65,15 @@ const Header = () => {
         </div>
       </div>
       <ul className="flex container mx-auto px-36 items-center gap-3">
-        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] " >
+        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
           Elektronika
         </li>
         <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
           Maishiy texnika
         </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">Kiyim</li>
+        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
+          Kiyim
+        </li>
         <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
           Payabzallar
         </li>
@@ -90,7 +98,9 @@ const Header = () => {
         <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
           Bolalar tovarlari
         </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">Yana^</li>
+        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
+          Yana^
+        </li>
       </ul>
     </>
   );
