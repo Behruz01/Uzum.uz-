@@ -43,7 +43,28 @@ const Slider = () => {
         <SwiperSlide>
           <img
             className="w-full rounded-lg mt-8 mb-16"
+            src="https://images.uzum.uz/cg4mbqfhj8j9g699dmjg/main_page_banner.jpg"
+            alt=""
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className="w-full rounded-lg mt-8 mb-16"
+            src="	https://images.uzum.uz/cg4mamfg49devoaa323g/main_page_banner.jpg"
+            alt=""
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className="w-full rounded-lg mt-8 mb-16"
             src="https://images.uzum.uz/cg4md8ng49devoaa32f0/main_page_banner.jpg"
+            alt=""
+          />
+        </SwiperSlide>{" "}
+        <SwiperSlide>
+          <img
+            className="w-full rounded-lg mt-8 mb-16"
+            src="	https://images.uzum.uz/cfv22a7hgiov1qid9m1g/main_page_banner.jpg"
             alt=""
           />
         </SwiperSlide>
