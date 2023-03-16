@@ -57,7 +57,7 @@ const Footer = () => {
               Foydalanuvchi kelishuvi
             </h3>
           </div>
-          <p className="">
+          <p className="text-xs">
             «2023© XK MCHJ «UZUM MARKET». STIR 309376127. Barcha huquqlar
             himoyalangan»
           </p>
