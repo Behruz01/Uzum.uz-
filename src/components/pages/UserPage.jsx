@@ -1,11 +1,11 @@
 import React from 'react';
 
-const FavouriteReduser = () => {
+const UserPage = () => {
     return (
         <div>
-            
+          <p>User page</p>
         </div>
     );
 }
 
-export default FavouriteReduser;
+export default UserPage;

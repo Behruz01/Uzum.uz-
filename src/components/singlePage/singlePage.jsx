@@ -4,7 +4,19 @@ import heart_icon from "../../assets/heart_icon.svg";
 import reclame_icon from "../../assets/reklama.png";
 
 import SingleSlider from "./singleSlider/SingleSlider";
+import { useDispatch, useSelector } from "react-redux";
+import { decrement, increment } from "../../store/slicers/counterSlice";
 const SinglePage = () => {
+  const store = useSelector((state) => state.counter);
+
+  const dispatch = useDispatch();
+  const decrementHandler = () => {
+    dispatch(decrement());
+  };
+  const incrementHandler = () => {
+    dispatch(increment());
+  };
+
   return (
     <Layout>
       <div className="container mx-auto px-36 mt-14">
@@ -26,9 +38,19 @@ const SinglePage = () => {
             <img className="mx-auto w-3/4" src={reclame_icon} alt="" />
             <p>Miqdor:</p>
             <span className="count flex border   items-center w-20">
-              <button className="font-bold text-2xl p-2 w-9">-</button>
-              <p className=""> 0</p>
-              <button className="font-bold text-2xl p-2 w-9">+</button>
+              <button
+                onClick={() => decrementHandler()}
+                className="font-bold text-2xl p-2 w-9"
+              >
+                -
+              </button>
+              <p className="">{store.count}</p>
+              <button
+                onClick={() => incrementHandler()}
+                className="font-bold text-2xl p-2 w-9"
+              >
+                +
+              </button>
             </span>
             <p>Narx:</p>
             <p className="price font-bold"> 1 350 000 so'm</p>

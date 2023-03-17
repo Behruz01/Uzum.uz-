@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import locationIcon from "../../assets/lacation_icon.png";
 import uzb_icon from "../../assets/uzb_flag_icon.jpg";
 import uzum_market from "../../assets/uzum_market.png";
@@ -7,8 +7,13 @@ import heart_icon from "../../assets/heart_icon.svg";
 import bag_icon from "../../assets/bag_icon.svg";
 import catalog_icon from "../../assets/catalog_icon.png";
 import lupa_icon from "../../assets/lupa_icon.png";
+import { useSelector } from "react-redux";
+import { AuthContext } from "../contex/authContext";
+import { Link } from "react-router-dom";
 
 const Header = () => {
+  const { isLogin } = useContext(AuthContext);
+  const { favoriteProduct } = useSelector((state) => state.favorite);
   return (
     <>
       <div className="bg-slate-100 ">
@@ -50,12 +55,33 @@ const Header = () => {
           </div>
         </div>
         <div className="btns flex">
-          <span className="ml-2 flex items-center hover:bg-gray-200 rounded-md p-2 text-black ">
+          {/* <Link
+            to={"/user"}
+            className="ml-2 flex items-center hover:bg-gray-200 rounded-md p-2 text-black "
+          >
             <img className="w-7 h-7 mr-2 " src={user_icon} alt="" />
             Kirish
-          </span>
+          </Link> */}
+          {isLogin ? (
+            <Link
+              to={"/login"}
+              className="ml-2 flex items-center hover:bg-gray-200 rounded-md p-2 text-black "
+            >
+              <img className="w-7 h-7 mr-2 " src={user_icon} alt="" />
+              Chiqish
+            </Link>
+          ) : (
+            <Link
+              to={"/user"}
+              className="ml-2 flex items-center hover:bg-gray-200 rounded-md p-2 text-black "
+            >
+              <img className="w-7 h-7 mr-2 " src={user_icon} alt="" />
+              Kirish
+            </Link>
+          )}
           <span className="ml-2 flex items-center hover:bg-gray-200 rounded-md p-2 text-black ">
             <img className="w-5 h-5 mr-2" src={heart_icon} alt="" />
+            <p className="text-red-600"> {favoriteProduct.length}</p>
             Saralangan
           </span>
           <span className="ml-2 flex items-center hover:bg-gray-200 rounded-md p-2 text-black ">
