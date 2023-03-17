@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { A11y, Navigation, Pagination, Scrollbar, Autoplay } from "swiper";
 
-const SingleSlider = () => {
+const SingleSlider = ({image}) => {
   return (
     <Swiper
     className="w-2/5"
@@ -22,7 +22,7 @@ const SingleSlider = () => {
     <SwiperSlide>
       <img
         className="w-full rounded-lg mt-8 mb-16"
-        src="https://images.uzum.uz/cg3c2bnhj8j9g6998t6g/main_page_banner.jpg"
+        src={image}
         alt=""
       />
     </SwiperSlide>

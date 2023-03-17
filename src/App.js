@@ -4,6 +4,7 @@ import "./App.css";
 import { AuthContext } from "./components/contex/authContext";
 import Main from "./components/main/Main";
 import Login from "./components/pages/Login";
+import NotFaund from "./components/pages/NotFaund";
 // import UserPage from "./components/pages/UserPage";
 import SinglePage from "./components/singlePage/SinglePage.jsx";
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="/single/:id" element={<SinglePage />} />
           <Route path="/login" element={<Login />} />
+          <Route path="*" element={<NotFaund />} />
           {isLogin ? (
             <Route path="/user" element={<Main />} />
           ) : (
