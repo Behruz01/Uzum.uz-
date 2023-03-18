@@ -49,7 +49,7 @@ const SinglePage = () => {
             <SingleSlider image={date.image} />
             <div className="right flex flex-col gap-4 ">
               <div className="flex gap-64 justify-between">
-                <p className="rating">5.0 ( 15 baho ) Koʻproq 50 buyurtma</p>
+                <p className="rating">{date.rating}dan( 15 baho ) Koʻproq 50 buyurtma</p>
                 <span className="flex">
                   <img className="w-5 h-5" src={heart_icon} alt="" />
                   <p className="like">istaklarga</p>

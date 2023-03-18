@@ -11,6 +11,7 @@ const Card = () => {
       .then((res) => res.json())
       .then((data) => {
         setInfo(data);
+        console.log(data);
       });
   }, []);
   return (
@@ -18,17 +19,16 @@ const Card = () => {
       <h2 className="font-bold">Hafta aksiyasi:</h2>
       <div className=" flex gap-3 my-12 flex-wrap">
         {info?.map((res) => (
-          <Link key={res.id} to={"/single/" + res.id}>
             <Product
               key={res.id}
-              title={res.title}
+              id={res.id}
+              name={res.name}
               price={res.price}
               description={res.description}
               category={res.category}
               image={res.image}
               rating={res.rating}
             />
-          </Link>
         ))}
       </div>
     </div>
