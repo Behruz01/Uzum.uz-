@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import locationIcon from "../../assets/lacation_icon.png";
 import uzb_icon from "../../assets/uzb_flag_icon.jpg";
 import uzum_market from "../../assets/uzum_market.png";
@@ -14,15 +14,8 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const { isLogin } = useContext(AuthContext);
-  const { favoriteProduct } = useSelector((state) => state.favorite);
+  const { favoriteVideos } = useSelector((state) => state.favorite);
 
-  // useEffect(() => {
-  //   fetch(BASE_URL + "products/")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //     });
-  // }, []);
   return (
     <>
       <div className="bg-slate-100 ">
@@ -88,9 +81,12 @@ const Header = () => {
               Kirish
             </Link>
           )}
-          <Link to={"/likes"} className="ml-2 flex items-center hover:bg-gray-200 rounded-md p-2 text-black ">
+          <Link
+            to={"/likes"}
+            className="ml-2 flex items-center hover:bg-gray-200 rounded-md p-2 text-black "
+          >
             <img className="w-5 h-5 mr-2" src={heart_icon} alt="" />
-            <p className="text-red-600"> {favoriteProduct.length}</p>
+            <p className="text-red-600">{favoriteVideos.length} </p>
             Saralangan
           </Link>
           <span className="ml-2 flex items-center hover:bg-gray-200 rounded-md p-2 text-black ">
@@ -99,6 +95,7 @@ const Header = () => {
           </span>
         </div>
       </div>
+
       <ul className="flex container mx-auto px-36 items-center gap-3">
         <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
           Elektronika

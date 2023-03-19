@@ -60,7 +60,7 @@ const Slider = () => {
             src="https://images.uzum.uz/cg4md8ng49devoaa32f0/main_page_banner.jpg"
             alt=""
           />
-        </SwiperSlide>{" "}
+        </SwiperSlide>
         <SwiperSlide>
           <img
             className="w-full rounded-lg mt-8 mb-16"

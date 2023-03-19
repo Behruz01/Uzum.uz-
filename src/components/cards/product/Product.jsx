@@ -4,32 +4,25 @@ import { Link } from "react-router-dom";
 import heart_icon from "../../../assets/heart_icon.svg";
 import { add, remove } from "../../../store/slicers/favoriteSlice";
 
-const Product = ({
-  name,
-  price,
-  description,
-  category,
-  image,
-  rating,
-  id,
-}) => {
+const Product = ({ name, price, description, category, image, rating, id,response }) => {
   const dispatch = useDispatch();
 
-  const { favoriteProduct } = useSelector((state) => state.favorite);
-  const updateLikeHandler = (res) => {
-    let hasProduct = false;
-    favoriteProduct.forEach((element) => {
-      if (element.id === res.id) {
-        hasProduct = true;
+  const { favoriteVideos } = useSelector((state) => state.favorite);
+  console.log(favoriteVideos);
+  const updateLikeHandler = (video) => {
+    let hasVideo = false;
+    favoriteVideos.forEach((element) => {
+      if (element.id === video.id) {
+        hasVideo = true;
       }
-      console.log(res);
     });
-    if (hasProduct) {
-      dispatch(remove(res));
+    if (hasVideo) {
+      dispatch(remove(video));
     } else {
-      dispatch(add(res));
+      dispatch(add(video));
     }
   };
+
   return (
     <div className="card w-56 hover:shadow-xl hover:scale-105 hover:rounded-md 	">
       <span className="flex relative">
@@ -38,7 +31,7 @@ const Product = ({
         </Link>
 
         <img
-          onClick={() => updateLikeHandler()}
+          onClick={() => updateLikeHandler(response)}
           className="w-5 h-5 absolute left-48 top-3 z-10"
           src={heart_icon}
           alt=""
@@ -46,9 +39,11 @@ const Product = ({
       </span>
       <Link key={id} to={"/single/" + id}>
         <div className="info p-3">
-          <p className="name">{name}</p>
-          <p className="rating text-gray-400">{description}</p>
-          <p className="rating text-black">⭐️{rating} baho </p>
+          <p className="name font-bold">{name}</p>
+          <p className="rating text-gray-400">{category}</p>
+          <p className="rating text-black">
+            ⭐️{rating} baho {rating} tadan{" "}
+          </p>
           <p className="credit bg-yellow-200 rounded-md">
             {price} 000 so'm/oyiga
           </p>
