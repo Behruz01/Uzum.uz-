@@ -10,7 +10,6 @@ import lupa_icon from "../../assets/lupa_icon.png";
 import { useSelector } from "react-redux";
 import { AuthContext } from "../contex/authContext";
 import { Link } from "react-router-dom";
-// import BASE_URL from "../URL/Base_url";
 
 const Header = () => {
   const { isLogin } = useContext(AuthContext);
