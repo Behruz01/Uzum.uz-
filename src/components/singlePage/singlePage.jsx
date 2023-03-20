@@ -23,9 +23,9 @@ const SinglePage = () => {
         }
         const data = await res.json();
         setDate(data);
-        console.log(data);                        
+        console.log(data);
       };
-      getData()
+      getData();
     } catch (error) {
       setIsError(true);
     }
@@ -40,6 +40,7 @@ const SinglePage = () => {
   const incrementHandler = () => {
     dispatch(increment());
   };
+  const [count, setCount] = useState(1);
 
   return (
     <Layout>
@@ -49,7 +50,9 @@ const SinglePage = () => {
             <SingleSlider image={date.image} />
             <div className="right flex flex-col gap-4 ">
               <div className="flex gap-64 justify-between">
-                <p className="rating">{date.rating}dan( 15 baho ) Koʻproq 50 buyurtma</p>
+                <p className="rating">
+                  {date.rating}dan( 15 baho ) Koʻproq 50 buyurtma
+                </p>
                 <span className="flex">
                   <img className="w-5 h-5" src={heart_icon} alt="" />
                   <p className="like">istaklarga</p>
@@ -62,21 +65,29 @@ const SinglePage = () => {
               <p>Miqdor:</p>
               <span className="count flex border   items-center w-20">
                 <button
-                  onClick={() => decrementHandler()}
+                  // onClick={() => decrementHandler()}
+                  onClick={(e) => {
+                    if (count > 1) {
+                      setCount(count - 1);
+                    }
+                  }}
                   className="font-bold text-2xl p-2 w-9"
                 >
                   -
                 </button>
-                <p className="">{store.count}</p>
+                <p className="">{count}</p>
                 <button
-                  onClick={() => incrementHandler()}
+                  // onClick={() => incrementHandler()}
+                  onClick={(e) => {
+                    setCount(count + 1);
+                  }}
                   className="font-bold text-2xl p-2 w-9"
                 >
                   +
                 </button>
               </span>
               <p>Narx:</p>
-              <p className="price font-bold"> {date.price}$</p>
+              <p className="price font-bold"> {date.price*count} 000 so'm</p>
               <div className="btns flex gap-4 ">
                 <button className="px-20 py-3  bg-violet-700 text-white rounded-md ">
                   Savatga qo'shish

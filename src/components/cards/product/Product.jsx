@@ -1,27 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import heart_icon from "../../../assets/heart_icon.svg";
 import { add, remove } from "../../../store/slicers/favoriteSlice";
+import Likes from "../../pages/Likes";
 
-const Product = ({ name, price, description, category, image, rating, id,response }) => {
+const Product = ({
+  name,
+  price,
+  description,
+  category,
+  image,
+  rating,
+  id,
+  response,
+}) => {
   const dispatch = useDispatch();
 
-  const { favoriteVideos } = useSelector((state) => state.favorite);
-  console.log(favoriteVideos);
-  const updateLikeHandler = (video) => {
-    let hasVideo = false;
-    favoriteVideos.forEach((element) => {
-      if (element.id === video.id) {
-        hasVideo = true;
+  const { favoriteProduct } = useSelector((state) => state.favorite);
+  const updateLikeHandler = (Product) => {
+    let hasProduct = false;
+    favoriteProduct.forEach((element) => {
+      if (element.id === Product.id) {
+        hasProduct = true;
       }
     });
-    if (hasVideo) {
-      dispatch(remove(video));
+    if (hasProduct) {
+      dispatch(remove(Product));
     } else {
-      dispatch(add(video));
+      dispatch(add(Product));
     }
   };
+  // {
+  //   const [data, setData] = useState([]);
+  //   favoriteProduct.forEach((element) => {
+  //     <Likes
+  //       log={"salom"}
+  //       key={element.id}
+  //       name={element.name}
+  //       category={element.category}
+  //       description={element.description}
+  //       rating={element.rating}
+  //       price={element.price}
+  //     />;
+  //   });
+  // }
 
   return (
     <div className="card w-56 hover:shadow-xl hover:scale-105 hover:rounded-md 	">
@@ -41,9 +64,9 @@ const Product = ({ name, price, description, category, image, rating, id,respons
         <div className="info p-3">
           <p className="name font-bold">{name}</p>
           <p className="rating text-gray-400">{category}</p>
-          <p className="rating text-black">
-            ⭐️{rating} baho {rating} tadan{" "}
-          </p>
+          <p className="rating text-gray-400">{description}</p>
+
+          <p className="rating text-black">⭐️{rating} baho</p>
           <p className="credit bg-yellow-200 rounded-md">
             {price} 000 so'm/oyiga
           </p>

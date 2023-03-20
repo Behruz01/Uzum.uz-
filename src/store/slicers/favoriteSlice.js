@@ -1,21 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialFavoriteSlicer = {
-  favoriteVideos:[]
+export const initialFavoriteSlicer = {
+  favoriteProduct: [],
 };
 export const favoriteSlicer = createSlice({
   name: "favorite",
   initialState: initialFavoriteSlicer,
   reducers: {
     add: (state, action) => {
-      state.favoriteVideos.push(action.payload)
+      state.favoriteProduct.push(action.payload);
     },
     remove: (state, action) => {
-      state.favoriteVideos=state.favoriteVideos.filter((video)=>{
-        if(video.id!==action.payload.id){
-          return true
+      state.favoriteProduct = state.favoriteProduct.filter((video) => {
+        if (video.id !== action.payload.id) {
+          return true;
         }
-      })
+      });
     },
   },
 });

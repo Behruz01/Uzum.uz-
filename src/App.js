@@ -12,7 +12,6 @@ import SinglePage from "./components/singlePage/SinglePage.jsx";
 function App() {
   const { isLogin } = useContext(AuthContext);
   console.log(isLogin);
-  // const [loginText, setLoginText] = useState("Kirish");
   return (
     <>
       <BrowserRouter>

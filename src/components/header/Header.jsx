@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const { isLogin } = useContext(AuthContext);
-  const { favoriteVideos } = useSelector((state) => state.favorite);
+  const { favoriteProduct } = useSelector((state) => state.favorite);
 
   return (
     <>
@@ -38,7 +38,10 @@ const Header = () => {
         </div>
       </div>
       <div className="flex container mx-auto px-36 items-center justify-between p-5">
-        <img className="w-56 " src={uzum_market} alt="uzum.uz" />
+        <Link to={"/"}>
+          <img className="w-56 " src={uzum_market} alt="uzum.uz" />
+        </Link>
+
         <div className="flex ">
           <span className="bg-violet-200 flex rounded-md p-2 text-violet-800">
             <img className="mr-2" src={catalog_icon} alt="" />
@@ -56,13 +59,7 @@ const Header = () => {
           </div>
         </div>
         <div className="btns flex">
-          {/* <Link
-            to={"/user"}
-            className="ml-2 flex items-center hover:bg-gray-200 rounded-md p-2 text-black "
-          >
-            <img className="w-7 h-7 mr-2 " src={user_icon} alt="" />
-            Kirish
-          </Link> */}
+         
           {isLogin ? (
             <Link
               to={"/login"}
@@ -85,7 +82,7 @@ const Header = () => {
             className="ml-2 flex items-center hover:bg-gray-200 rounded-md p-2 text-black "
           >
             <img className="w-5 h-5 mr-2" src={heart_icon} alt="" />
-            <p className="text-red-600">{favoriteVideos.length} </p>
+            <p className="text-red-600">{favoriteProduct.length} </p>
             Saralangan
           </Link>
           <span className="ml-2 flex items-center hover:bg-gray-200 rounded-md p-2 text-black ">
@@ -96,40 +93,40 @@ const Header = () => {
       </div>
 
       <ul className="flex container mx-auto px-36 items-center gap-3">
-        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
+        <li className="text-gray-400 cursor-pointer hover:text-black  ">
           Elektronika
         </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
+        <li className="text-gray-400 cursor-pointer hover:text-black  ">
           Maishiy texnika
         </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
+        <li className="text-gray-400 cursor-pointer hover:text-black  ">
           Kiyim
         </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
+        <li className="text-gray-400 cursor-pointer hover:text-black  ">
           Payabzallar
         </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
+        <li className="text-gray-400 cursor-pointer hover:text-black  ">
           Aksessuarlar
         </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
+        <li className="text-gray-400 cursor-pointer hover:text-black  ">
           Go'zallik
         </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
+        <li className="text-gray-400 cursor-pointer hover:text-black  ">
           Salomatlik
         </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
+        <li className="text-gray-400 cursor-pointer hover:text-black  ">
           Uy-ro'zg'or buyumlari
         </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
+        <li className="text-gray-400 cursor-pointer hover:text-black  ">
           Qurilish va ta'mirlash
         </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
+        <li className="text-gray-400 cursor-pointer hover:text-black  ">
           Avtotovarlar
         </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
+        <li className="text-gray-400 cursor-pointer hover:text-black  ">
           Bolalar tovarlari
         </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black hover:border-b-[2px] ">
+        <li className="text-gray-400 cursor-pointer hover:text-black  ">
           Yana^
         </li>
       </ul>
