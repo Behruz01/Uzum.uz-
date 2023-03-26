@@ -13,25 +13,27 @@ const Card = () => {
       });
   }, []);
 
-
   return (
     <div className="container mx-auto px-36">
       <h2 className="font-bold">Hafta aksiyasi:</h2>
       <div className=" flex gap-3 my-12 flex-wrap">
         {info?.map((res) => (
           <Product
-          key={res.id}
-          id={res.id}
-          name={res.name}
-          price={res.price}
-          description={res.description}
-          category={res.category}
-          image={res.image}
-          rating={res.rating}
-          response={res}
+            key={res.id}
+            id={res.id}
+            name={res.name}
+            price={res.price}
+            description={res.description}
+            category={res.category}
+            image={res.image}
+            rating={res.rating}
+            response={res}
           />
-          ))}
+        ))}
       </div>
+      <button className=" mb-10 bg-zinc-100 border border-zinc-200 hover:bg-zinc-50 py-2 rounded-lg w-96 text-zinc-700 mx-auto block font-medium">
+        Show again 5 product
+      </button>
     </div>
   );
 };
