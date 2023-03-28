@@ -31,21 +31,6 @@ const Product = ({
       dispatch(add(Product));
     }
   };
-  // {
-  //   const [data, setData] = useState([]);
-  //   favoriteProduct.forEach((element) => {
-  //     <Likes
-  //       log={"salom"}
-  //       key={element.id}
-  //       name={element.name}
-  //       category={element.category}
-  //       description={element.description}
-  //       rating={element.rating}
-  //       price={element.price}
-  //     />;
-  //   });
-  // }
-
   return (
     <div className="card w-56 hover:shadow-xl hover:scale-105 hover:rounded-md 	">
       <span className="flex relative">

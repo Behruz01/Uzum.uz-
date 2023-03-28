@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import locationIcon from "../../assets/lacation_icon.png";
 import uzb_icon from "../../assets/uzb_flag_icon.jpg";
 import uzum_market from "../../assets/uzum_market.png";
@@ -10,10 +10,27 @@ import lupa_icon from "../../assets/lupa_icon.png";
 import { useSelector } from "react-redux";
 import { AuthContext } from "../contex/authContext";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import SingleCategoryPage from "../pages/CategoryPage";
 
 const Header = () => {
+  const [categories, setCategories] = useState([]);
   const { isLogin } = useContext(AuthContext);
   const { favoriteProduct } = useSelector((state) => state.favorite);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await axios.get(
+          "https://api.escuelajs.co/api/v1/categories"
+        );
+        setCategories(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchCategories();
+  }, []);
 
   return (
     <>
@@ -59,7 +76,6 @@ const Header = () => {
           </div>
         </div>
         <div className="btns flex">
-         
           {isLogin ? (
             <Link
               to={"/login"}
@@ -92,43 +108,16 @@ const Header = () => {
         </div>
       </div>
 
-      <ul className="flex container mx-auto px-36 items-center gap-3">
-        <li className="text-gray-400 cursor-pointer hover:text-black  ">
-          Elektronika
-        </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black  ">
-          Maishiy texnika
-        </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black  ">
-          Kiyim
-        </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black  ">
-          Payabzallar
-        </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black  ">
-          Aksessuarlar
-        </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black  ">
-          Go'zallik
-        </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black  ">
-          Salomatlik
-        </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black  ">
-          Uy-ro'zg'or buyumlari
-        </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black  ">
-          Qurilish va ta'mirlash
-        </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black  ">
-          Avtotovarlar
-        </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black  ">
-          Bolalar tovarlari
-        </li>
-        <li className="text-gray-400 cursor-pointer hover:text-black  ">
-          Yana^
-        </li>
+      <ul className="flex container mx-auto px-36 items-center gap-28">
+        {categories.map((category) => (
+          <Link key={category.id} to={`/category/${category.id}`}>
+            <li
+              className="text-gray-400 cursor-pointer hover:text-black "
+            >
+              {category.name}
+            </li>
+          </Link>
+        ))}
       </ul>
     </>
   );
