@@ -10,6 +10,7 @@ const Card = () => {
       .then((res) => res.json())
       .then((data) => {
         setInfo(data);
+        // console.log(data);
       });
   }, []);
 
@@ -21,12 +22,11 @@ const Card = () => {
           <Product
             key={res.id}
             id={res.id}
-            name={res.name}
+            title={res.title}
             price={res.price}
             description={res.description}
-            category={res.category}
-            image={res.image}
-            rating={res.rating}
+            image={res.images[0]}
+            rating={res.id}
             response={res}
           />
         ))}

@@ -4,8 +4,7 @@ import heart_icon from "../../assets/heart_icon.svg";
 
 
 
-const Likes = ({name,description,category,rating,price,log}) => {
-console.log(log);
+const Likes = ({name,description,category,rating,price}) => {
   return (
     <Layout>
       <div className="container mx-auto px-36">

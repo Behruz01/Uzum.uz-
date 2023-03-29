@@ -1,20 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import heart_icon from "../../../assets/heart_icon.svg";
 import { add, remove } from "../../../store/slicers/favoriteSlice";
-import Likes from "../../pages/Likes";
 
-const Product = ({
-  name,
-  price,
-  description,
-  category,
-  image,
-  rating,
-  id,
-  response,
-}) => {
+const Product = ({ title, price, description, image, rating, id, response }) => {
   const dispatch = useDispatch();
 
   const { favoriteProduct } = useSelector((state) => state.favorite);
@@ -47,15 +37,14 @@ const Product = ({
       </span>
       <Link key={id} to={"/single/" + id}>
         <div className="info p-3">
-          <p className="name font-bold">{name}</p>
-          <p className="rating text-gray-400">{category}</p>
+          <p className="name font-bold">{title}</p>
           <p className="rating text-gray-400">{description}</p>
 
           <p className="rating text-black">⭐️{rating} baho</p>
           <p className="credit bg-yellow-200 rounded-md">
             {price} 000 so'm/oyiga
           </p>
-          <p className="price font-medium">{price}$</p>
+          <p className="price font-medium">Price: {price}$</p>
         </div>
       </Link>
     </div>

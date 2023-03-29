@@ -23,7 +23,6 @@ const SinglePage = () => {
         }
         const data = await res.json();
         setDate(data);
-        console.log(data);
       };
       getData();
     } catch (error) {
@@ -41,25 +40,23 @@ const SinglePage = () => {
     dispatch(increment());
   };
   const [count, setCount] = useState(1);
-
   return (
     <Layout>
       {!isError ? (
         <div className="container mx-auto px-36 mt-14">
           <div className="wrapper flex gap-16 mb-20">
-            <SingleSlider image={date.image} />
+            <SingleSlider image={date.images} />
             <div className="right flex flex-col gap-4 ">
               <div className="flex gap-64 justify-between">
                 <p className="rating">
-                  {date.rating}dan( 15 baho ) Koʻproq 50 buyurtma
+                  {date.id}dan( 15 baho ) Koʻproq 50 buyurtma
                 </p>
                 <span className="flex">
                   <img className="w-5 h-5" src={heart_icon} alt="" />
                   <p className="like">istaklarga</p>
                 </span>
               </div>
-              <h2 className="name font-bold">{date.name}</h2>
-              <p className="prodav">{date.category}</p>
+              <h2 className="name font-bold">{date.title}</h2>
               <p className="das">{date.description}</p>
               <img className="mx-auto w-3/4" src={reclame_icon} alt="" />
               <p>Miqdor:</p>
@@ -87,7 +84,7 @@ const SinglePage = () => {
                 </button>
               </span>
               <p>Narx:</p>
-              <p className="price font-bold"> {date.price*count} 000 so'm</p>
+              <p className="price font-bold"> {date.price * count} 000 so'm</p>
               <div className="btns flex gap-4 ">
                 <button className="px-20 py-3  bg-violet-700 text-white rounded-md ">
                   Savatga qo'shish
