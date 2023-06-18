@@ -60,7 +60,7 @@ const Header = () => {
         </Link>
 
         <div className="flex ">
-          <span className="bg-violet-200 flex rounded-md p-2 text-violet-800">
+          <span className="bg-violet-200 flex rounded-md p-2 text-violet-800 cursor-pointer" >
             <img className="mr-2" src={catalog_icon} alt="" />
             Katalog
           </span>

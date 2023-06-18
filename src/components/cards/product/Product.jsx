@@ -4,7 +4,15 @@ import { Link } from "react-router-dom";
 import heart_icon from "../../../assets/heart_icon.svg";
 import { add, remove } from "../../../store/slicers/favoriteSlice";
 
-const Product = ({ title, price, description, image, rating, id, response }) => {
+const Product = ({
+  title,
+  price,
+  description,
+  image,
+  rating,
+  id,
+  response,
+}) => {
   const dispatch = useDispatch();
 
   const { favoriteProduct } = useSelector((state) => state.favorite);
